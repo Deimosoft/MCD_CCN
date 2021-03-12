@@ -19,18 +19,21 @@ sudo mkdir CCD/Videos
 sudo mkdir CCD/Videos/Temp
 sudo mkdir CCD/Videos/Ready
 sudo mkdir CCD/Scripts
+sudo mkdir CCD/Scripts/Commands
 
 #Move scripts into the sripts drive
 echo "Move pre-made scripts over"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~"
 cd
-cd MCD_CCN/Scripts
-cp StartC ../CCD/Scripts
-cp StopC ../CCD/Scripts
+cd MCD_CCN
+cp StartC ../CCD/Scripts/Commands
+cp StopC ../CCD/Scripts/Commands
 
 #Make scripts executable
 echo "Make the scripts executeable."
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+cd
+cd CCD/Scripts/Commands
 sudo chmod +x StartC
 sudo chmod +x StopC
 
@@ -41,20 +44,20 @@ sudo cp StartC /bin
 sudo cp StopC /bin
 
 #Create new scripts
-echo "Creating new scripts"
-echo "~~~~~~~~~~~~~~~~~~~~"
+#echo "Creating new scripts"
+#echo "~~~~~~~~~~~~~~~~~~~~"
 #sudo ./CreateUD #Create UpdateC
 #sudo ./CreateUC #Create Upcode
 
 #Modify Crontab
-echo "Modifying the crontab"
-echo "~~~~~~~~~~~~~~~~~~~~~"
+#echo "Modifying the crontab"
+#echo "~~~~~~~~~~~~~~~~~~~~~"
 #sudo ./EDcron #Launch the edit crontab program
 
 #Edit MOTD
 sudo rm -r /etc/motd
 cd
-sudo cp CCD/motd /etc
+sudo cp MCD_CCN/motd /etc
 
 #Finish
 echo "Enjoy!"
