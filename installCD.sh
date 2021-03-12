@@ -43,13 +43,13 @@ sudo cp StopC /bin
 #Create new scripts
 echo "Creating new scripts"
 echo "~~~~~~~~~~~~~~~~~~~~"
-sudo ./CreateUD #Create UpdateC
-sudo ./CreateUC #Create Upcode
+#sudo ./CreateUD #Create UpdateC
+#sudo ./CreateUC #Create Upcode
 
 #Modify Crontab
 echo "Modifying the crontab"
 echo "~~~~~~~~~~~~~~~~~~~~~"
-sudo ./EDcron #Launch the edit crontab program
+#sudo ./EDcron #Launch the edit crontab program
 
 #Edit MOTD
 sudo rm -r /etc/motd
