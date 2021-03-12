@@ -3,17 +3,18 @@ echo "Let's get started!"
 echo "~~~~~~~~~~~~~~~~~~"
 echo "Installing the loopersystem."
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+sudo chmod +x install.sh
 sudo ./install.sh #Installs the looper
 
 #Build CCD folder system
 echo "Making the CCD file system"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~"
-sudo mkdir ~/CCD
-sudo mkdir ~/CCD/Videos
-sudo mkdir ~/CCD/Videos/Temp
-sudo mkdir ~/CCD/Videos/Ready
-sudo mkdir ~/CCD/Scripts
-sudo mkdir ~/CCD/Scripts/Commands
+sudo mkdir /home/pi/CCD
+sudo mkdir /home/pi/CCD/Videos
+sudo mkdir /home/pi/CCD/Temp
+sudo mkdir /home/pi/CCD/Ready
+sudo mkdir /home/pi/CCD/Scripts
+sudo mkdir /home/pi/CCD/Scripts/Commands
 
 #Make scripts executable
 echo "Make the scripts executeable."
@@ -24,8 +25,8 @@ sudo chmod +x StopC
 #Move scripts into the sripts drive
 echo "Move pre-made scripts over"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~"
-cp StartC ~/CCD/Scripts/Commands
-cp StopC ~/CCD/Scripts/Commands
+cp StartC /home/pi/CCD/Scripts/Commands
+cp StopC /home/pi/CCD/Scripts/Commands
 
 #Move scripts into /bin
 echo "Moving the scripts into the /bin folder."
