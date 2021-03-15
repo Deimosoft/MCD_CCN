@@ -49,6 +49,9 @@ sudo cp StopC /bin
 sudo rm -r /etc/motd
 sudo cp motd /etc
 
+echo "Trying to copy over the video-ini"
+cp ./assets/video_looper.ini /boot
+
 #Finish
 echo "Enjoy!"
 echo "++++++"
