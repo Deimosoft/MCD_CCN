@@ -41,9 +41,18 @@ sudo cp StopC /bin
 #sudo ./CreateUC #Create Upcode
 
 #Modify Crontab
-#echo "Modifying the crontab"
-#echo "~~~~~~~~~~~~~~~~~~~~~"
-#sudo ./EDcron #Launch the edit crontab program
+echo "Modifying the crontab"
+echo "~~~~~~~~~~~~~~~~~~~~~"
+crontab -l > mycron
+#echo new cron into cron file
+echo "Video will update every hour and the hour.\nUpdate script will be checked every fifteen.\nYou can change these settings at any time.\n\n\nPress any key to continue."
+pause
+echo "00 * * * * UpdateC" >> mycron
+echo "14,29,44,59 * * * * Upcode" >> mycron 
+#install new cron file
+crontab mycron
+rm mycron
+
 
 #Edit MOTD
 sudo rm -r /etc/motd
