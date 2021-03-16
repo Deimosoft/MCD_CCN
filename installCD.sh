@@ -56,7 +56,7 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo $'Video will update every hour on the hour.\nUpdated scripts will be checked every fifteen minutes.\nYou can change these settings at any time.\n\n\nPress any key to continue.'
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 read test
-echo "00 * * * * UpdateC" >> mycron
+echo "0 * * * * UpdateC" >> mycron
 echo "14,29,44,59 * * * * Upcode" >> mycron 
 #install new cron file
 crontab mycron
