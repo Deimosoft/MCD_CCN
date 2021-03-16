@@ -42,13 +42,12 @@ mkdir -p /home/pi/video # create default video directory
 
 pip3 install setuptools
 python3 setup.py install --force
-cd ~/MCD_CCN/assets
-cp video_looper.ini /boot
+cp ./assets/video_looper.ini /boot/video_looper.ini
 
 echo "Configuring video_looper to run on start..."
 echo "==========================================="
 
-cp video_looper.conf /etc/supervisor/conf.d/
+cp ./assets/video_looper.conf /etc/supervisor/conf.d/
 
 service supervisor restart
 
