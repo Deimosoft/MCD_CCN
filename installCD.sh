@@ -4,7 +4,7 @@ echo "~~~~~~~~~~~~~~~~~~"
 echo "Installing the loopersystem."
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 sudo git clone https://github.com/adafruit/pi_video_looper.git
-sudo cp video_looper.ini pi_video_looper/video_looper.ini
+sudo cp video_looper.ini pi_video_looper/assets/video_looper.ini
 sudo ./pi_video_looper/install.sh #Installs the looper
 
 #Build CCD folder system
