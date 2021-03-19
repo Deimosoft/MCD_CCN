@@ -2,7 +2,7 @@
 echo "Let's get started!"
 echo "~~~~~~~~~~~~~~~~~~"
 echo "Installing the loopersystem."
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 sudo git clone https://github.com/adafruit/pi_video_looper.git
 sudo cp video_looper.ini pi_video_looper/assets/video_looper.ini
 sudo ./pi_video_looper/install.sh #Installs the looper
@@ -20,7 +20,7 @@ sleep 15
 
 #Make scripts executable
 echo "Making scripts executeable."
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 sudo chmod +x StartC
 sudo chmod +x StopC
 sleep 10
