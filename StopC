@@ -1,1 +1,1 @@
-sudo supervidorctl stop video_looper
+sudo supervisorctl stop video_looper
