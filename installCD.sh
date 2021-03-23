@@ -1,11 +1,6 @@
 #Download and install pi_video_looper
 echo "Let's get started!"
 echo "~~~~~~~~~~~~~~~~~~"
-#echo "Installing the loopersystem."
-#echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-#sudo git clone https://github.com/adafruit/pi_video_looper.git
-#sudo cp video_looper.ini pi_video_looper/assets/video_looper.ini
-#sudo ./pi_video_looper/install.sh #Installs the looper
 
 #Build CCD folder system
 echo "Making the CCD file system"
@@ -17,28 +12,34 @@ sudo mkdir /home/pi/CCD/Videos/Ready
 sudo mkdir /home/pi/CCD/Scripts
 sudo mkdir /home/pi/CCD/Scripts/Commands
 sudo mkdir /home/pi/CCD/Scripts/ToRun
-sleep 15
+sleep 5
+
+echo "Installing the loopersystem."
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+sudo git clone https://github.com/adafruit/pi_video_looper.git
+sudo cp video_looper.ini pi_video_looper/assets/video_looper.ini
+sudo ./pi_video_looper/install.sh #Installs the looper
 
 #Make scripts executable
 echo "Making scripts executeable."
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 sudo chmod +x StartC
 sudo chmod +x StopC
-sleep 10
+sleep 5
 
 #Move scripts into the sripts drive
 echo "Move pre-made scripts over"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~"
 cp StartC /home/pi/CCD/Scripts/Commands
 cp StopC /home/pi/CCD/Scripts/Commands
-sleep 10
+sleep 5
 
 #Move scripts into /bin
 echo "Moving the scripts into the /bin folder."
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 sudo cp StartC /bin
 sudo cp StopC /bin
-sleep 10
+sleep 5
 
 #Create new scripts
 #echo "Creating new scripts"
@@ -65,6 +66,7 @@ rm mycron
 #Edit MOTD
 sudo rm -r /etc/motd
 sudo cp motd /etc
+sleep 2
 
 #Finish
 echo "Enjoy!"
