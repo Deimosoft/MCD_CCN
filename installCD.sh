@@ -12,8 +12,8 @@ echo "Making the CCD file system"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~"
 sudo mkdir /home/pi/CCD
 sudo mkdir /home/pi/CCD/Videos
-sudo mkdir /home/pi/CCD/Temp
-sudo mkdir /home/pi/CCD/Ready
+sudo mkdir /home/pi/CCD/Videos/Temp
+sudo mkdir /home/pi/CCD/Videos/Ready
 sudo mkdir /home/pi/CCD/Scripts
 sudo mkdir /home/pi/CCD/Scripts/Commands
 sudo mkdir /home/pi/CCD/Scripts/ToRun
