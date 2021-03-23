@@ -12,6 +12,12 @@ sudo mkdir /home/pi/CCD/Videos/Ready
 sudo mkdir /home/pi/CCD/Scripts
 sudo mkdir /home/pi/CCD/Scripts/Commands
 sudo mkdir /home/pi/CCD/Scripts/ToRun
+sudo chmod 777 /home/pi/CCD
+sudo chmod 777 /home/pi/CCD/Videos
+sudo chmod 777 /home/pi/CCD/Scripts
+sudo chmod 777 /home/pi/CCD/Videos/Ready
+sudo chmod 777 /home/pi/CCD/Scripts/Commands
+sudo chmod 777 /home/pi/CCD/Scripts/ToRun
 sleep 5
 
 echo "Installing the loopersystem."
