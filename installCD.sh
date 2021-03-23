@@ -20,6 +20,10 @@ sudo git clone https://github.com/adafruit/pi_video_looper.git
 sudo cp video_looper.ini pi_video_looper/assets/video_looper.ini
 sudo ./pi_video_looper/install.sh #Installs the looper
 
+echo "Installing dependencies."
+echo "~~~~~~~~~~~~~~~~~~~~~~~~"
+sudo apt-get install sshpass
+
 #Make scripts executable
 echo "Making scripts executeable."
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~"
