@@ -51,7 +51,7 @@ sleep 5
 clear
 echo "Modifying the crontab"
 echo "~~~~~~~~~~~~~~~~~~~~~"
-crontab -l > mycron
+crontab -u pi -l > mycron
 #echo new cron into cron file
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo $'Video will update every hour on the hour.\nUpdated scripts will be checked every fifteen minutes.\nYou can change these settings at any time.\n\n\nPress any key to continue.'
@@ -60,7 +60,7 @@ read test
 echo "0 * * * * UpdateC" >> mycron
 echo "14,29,44,59 * * * * Upcode" >> mycron 
 #install new cron file
-crontab mycron
+crontab -u pi mycron
 rm mycron
 
 #Edit MOTD
