@@ -1,7 +1,22 @@
 clear
-echo "What store is this for? /nPlease enter in the name, not the nsn."
+
+#Determine store
+echo "What store is this for? \nPlease enter in the name, not the nsn."
 read name
+
+#Create update files
 touch UpdateC
 touch Upcode
-echo StopC /nsudo rm -r /home/pi/CCD/Videos/Ready/CRM.mp4 /nsshpass -p "CRCS2021" scp otp@209.143.62.37:~/CCS/Stores/$name/CRM.mp4 ~/CCD/Videos/Ready /nStartC" > UpdateC
-echo sudo rm -r ~/CCD/Scripts/ToRun/update /nsshpass -p "CRCS2021" scp otp@209.143.62.37:~/CCS/Stores/$name/update ~/CCD/Scripts/ToRun /ncd ~/CCD/Scripts/ToRun /nsudo chmod +x update /nsudo ./update > Upcode
+
+#Write out Updatec
+echo StopC > UpdateC
+echo sudo rm -r /home/pi/CCD/Videos/Ready/CRM.mp4 >> UpdateC
+echo sshpass -p 'CRCS2021' scp otp@209.143.62.37:~/CCS/Stores/$name/CRM.mp4 ~/CCD/Videos/Ready >> UpdateC 
+echo StartC" >> UpdateC
+
+#Write out Upcode
+echo sudo rm -r ~/CCD/Scripts/ToRun/update > Upcode
+echo sshpass -p 'CRCS2021' scp otp@209.143.62.37:~/CCS/Stores/$name/update ~/CCD/Scripts/ToRun >> Upcode 
+echo cd ~/CCD/Scripts/ToRun >> Upcode 
+echo sudo chmod +x update >> Upcode 
+echo sudo ./update >> Upcode
