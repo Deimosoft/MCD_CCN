@@ -30,11 +30,20 @@ echo "Installing dependencies."
 echo "~~~~~~~~~~~~~~~~~~~~~~~~"
 sudo apt-get install sshpass
 
+#Create new scripts
+echo "Creating new scripts"
+echo "~~~~~~~~~~~~~~~~~~~~"
+sleep 3
+sudo chmod +x CreateUD
+sudo ./CreateUD #Create UpdateC
+
 #Make scripts executable
 echo "Making scripts executeable."
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 sudo chmod +x StartC
 sudo chmod +x StopC
+sudo chmod +x UpdateC
+sudo chmod +x Upcode
 sleep 5
 
 #Move scripts into the sripts drive
@@ -42,6 +51,8 @@ echo "Move pre-made scripts over"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~"
 cp StartC /home/pi/CCD/Scripts/Commands
 cp StopC /home/pi/CCD/Scripts/Commands
+cp UpdateC /home/pi/CCD/Scripts/Commands
+cp Upcode /home/pi/CCD/Scripts/Commands
 sleep 5
 
 #Move scripts into /bin
@@ -49,14 +60,9 @@ echo "Moving the scripts into the /bin folder."
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 sudo cp StartC /bin
 sudo cp StopC /bin
+sudo cp UpdateC /Bin
+sudo cp Upcode /bin
 sleep 5
-
-#Create new scripts
-echo "Creating new scripts"
-echo "~~~~~~~~~~~~~~~~~~~~"
-sleep 3
-sudo chmod +x CreateUD
-sudo ./CreateUD #Create UpdateC
 
 #Modify Crontab
 sudo chmod +x EDCron
