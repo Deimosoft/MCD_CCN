@@ -59,20 +59,9 @@ sudo chmod +x CreateUD
 sudo ./CreateUD #Create UpdateC
 
 #Modify Crontab
-clear
-echo "Modifying the crontab"
-echo "~~~~~~~~~~~~~~~~~~~~~"
-crontab -u pi -l > mycron
-#echo new cron into cron file
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo $'Video will update every hour on the hour.\nUpdated scripts will be checked every fifteen minutes.\nYou can change these settings at any time.\n\n\nPress any key to continue.'
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-read test
-echo "0 * * * * UpdateC" >> mycron
-echo "14,29,44,59 * * * * Upcode" >> mycron 
-#install new cron file
-crontab -u pi mycron
-rm mycron
+sudo chmod +x EDCron
+sudo ./EDCron
+sleep 2
 
 #Edit MOTD
 sudo rm -r /etc/motd
