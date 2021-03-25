@@ -11,13 +11,13 @@ touch Upcode
 #Write out Updatec
 echo StopC > UpdateC
 echo sudo rm -r /home/pi/CCD/Videos/Ready/CRM.mp4 >> UpdateC
-echo 'sshpass -p "CRCS2021" 'scp otp@209.143.62.37:~/CCS/Stores/$name/CRM.mp4 ~/CCD/Videos/Ready >> UpdateC 
+echo 'sshpass -p "CRCS2021" 'scp otp@209.143.62.37:~/CCS/Stores/$name/CRM.mp4 /home/pi/CCD/Videos/Ready >> UpdateC 
 echo StartC >> UpdateC
 
 #Write out Upcode
-echo sudo rm -r ~/CCD/Scripts/ToRun/update > Upcode
-echo 'sshpass -p "CRCS2021" 'scp otp@209.143.62.37:~/CCS/Stores/$name/update ~/CCD/Scripts/ToRun >> Upcode 
-echo cd ~/CCD/Scripts/ToRun >> Upcode 
+echo sudo rm -r home/pi/CCD/Scripts/ToRun/update > Upcode
+echo 'sshpass -p "CRCS2021" 'scp otp@209.143.62.37:~/CCS/Stores/$name/update /home/pi/CCD/Scripts/ToRun >> Upcode 
+echo cd /home/pi/CCD/Scripts/ToRun >> Upcode 
 echo sudo chmod +x update >> Upcode 
 echo sudo ./update >> Upcode
 
@@ -25,7 +25,7 @@ echo sudo ./update >> Upcode
 echo "Testing Secure Copy.\nLog in this one time and reply with yes to lock your IP as a registered and approved client for the CCS"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 sleep 4
-scp otp@209.143.62.37:~/CCS/test ~/CCD/Scripts/ToRun
+scp otp@209.143.62.37:~/CCS/test /home/pi/CCD/Scripts/ToRun
 clear
 cat /home/pi/CCD/Scripts/ToRun/test
 read test
