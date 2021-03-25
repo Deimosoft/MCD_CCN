@@ -74,6 +74,13 @@ sudo rm -r /etc/motd
 sudo cp motd /etc
 sleep 2
 
+#Display the motd
+clear
+cat motd
+echo "Press any key to continue."
+read test
+clear
+
 #Finish
 echo "Enjoy!"
 echo "++++++"
