@@ -74,10 +74,19 @@ sudo rm -r /etc/motd
 sudo cp motd /etc
 sleep 2
 
+echo "Testing Secure Copy.\nLog in this one time and reply with yes to lock your IP as a registered and approved client for the CCS"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+sleep 4
+scp otp@209.143.62.37:~/CCS/test /home/pi/CCD/Scripts/ToRun
+clear
+cat /home/pi/CCD/Scripts/ToRun/test
+read test
+rm /home/pi/CCD/Scripts/ToRun/test
+
 #Display the motd
 clear
 cat motd
-echo "Press any key to continue."
+echo "          Press any key to continue."
 read test
 clear
 
