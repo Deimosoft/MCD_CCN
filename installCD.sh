@@ -60,7 +60,7 @@ echo "Moving the scripts into the /bin folder."
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 sudo cp StartC /bin
 sudo cp StopC /bin
-sudo cp UpdateC /Bin
+sudo cp UpdateC /bin
 sudo cp Upcode /bin
 sleep 5
 
