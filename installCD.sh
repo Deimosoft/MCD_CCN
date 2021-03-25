@@ -52,10 +52,11 @@ sudo cp StopC /bin
 sleep 5
 
 #Create new scripts
-#echo "Creating new scripts"
-#echo "~~~~~~~~~~~~~~~~~~~~"
-#sudo ./CreateUD #Create UpdateC
-#sudo ./CreateUC #Create Upcode
+echo "Creating new scripts"
+echo "~~~~~~~~~~~~~~~~~~~~"
+sleep 3
+sudo chmod +x CreateUD
+sudo ./CreateUD #Create UpdateC
 
 #Modify Crontab
 clear
