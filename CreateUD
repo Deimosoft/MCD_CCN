@@ -22,10 +22,10 @@ echo sudo chmod +x update >> Upcode
 echo sudo ./update >> Upcode
 
 #Test SSHPASS
-echo "Testing SSH Pass.\nRespond with yes to lock your IP as a registered and approved client for the CCS"
+echo "Testing Secure Copy.\nLog in this one time and reply with yes to lock your IP as a registered and approved client for the CCS"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-sleep 2
-sshpass -p "CRCS2021" scp otp@209.143.62.37:~/CCS/test ~/CCD/Scripts/ToRun
+sleep 4
+scp otp@209.143.62.37:~/CCS/test ~/CCD/Scripts/ToRun
 clear
 cat ~/CCD/Scripts/ToRun/test
 read
