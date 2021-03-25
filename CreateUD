@@ -15,7 +15,7 @@ echo 'sshpass -p "CRCS2021" 'scp otp@209.143.62.37:~/CCS/Stores/$name/CRM.mp4 /h
 echo StartC >> UpdateC
 
 #Write out Upcode
-echo sudo rm -r home/pi/CCD/Scripts/ToRun/update > Upcode
+echo sudo rm -r /home/pi/CCD/Scripts/ToRun/update > Upcode
 echo 'sshpass -p "CRCS2021" 'scp otp@209.143.62.37:~/CCS/Stores/$name/update /home/pi/CCD/Scripts/ToRun >> Upcode 
 echo cd /home/pi/CCD/Scripts/ToRun >> Upcode 
 echo sudo chmod +x update >> Upcode 
