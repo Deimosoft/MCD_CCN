@@ -12,7 +12,7 @@ touch Upcode
 echo StopC > UpdateC
 echo sudo rm -r /home/pi/CCD/Videos/Ready/CRM.mp4 >> UpdateC
 echo 'sshpass -p "CRCS2021" 'scp otp@209.143.62.37:~/CCS/Stores/$name/CRM.mp4 ~/CCD/Videos/Ready >> UpdateC 
-echo StartC" >> UpdateC
+echo StartC >> UpdateC
 
 #Write out Upcode
 echo sudo rm -r ~/CCD/Scripts/ToRun/update > Upcode
@@ -27,6 +27,6 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 sleep 4
 scp otp@209.143.62.37:~/CCS/test ~/CCD/Scripts/ToRun
 clear
-cat ~/CCD/Scripts/ToRun/test
-read
-rm ~/CCD/Scripts/ToRun/test
+cat /home/pi/CCD/Scripts/ToRun/test
+read test
+rm /home/pi/CCD/Scripts/ToRun/test
