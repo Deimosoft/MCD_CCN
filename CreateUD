@@ -1,0 +1,126 @@
+#!/bin/bash
+
+#CreateUD
+
+clear
+
+#Create update files
+sudo touch UpdateC
+sudo  touch Upcode
+
+#Declare variables
+var1=false
+var2=false
+
+#Determine store
+echo 'What store is this for? \nPlease enter in the name, not the nsn.'
+read name
+clear
+
+#Determine source
+echo "Where are you storing you files?\n1.) CCS.\n2.)File hosting website like Dropbox or Github.\nEnter int he number corresponding to your answer."
+read type
+
+while [ $var1=false ]
+do
+case $type in
+        1)
+        #CCS
+                clear
+                echo "Please enter in the username of the server where your files are stored."
+                read user
+                echo "Enter in the public IP address of your server."
+                read IP
+                echo "Enter in the FULL file path to the video folder.\nDo not include the file name."
+                read locale
+                echo "Enter in the FULL file path to the update file folder.\nDo not include the file name."
+                read loacale2
+                echo "Enter in the password for the user."
+                read passwd
+                
+                #Write out Updatec
+                echo StopC > UpdateC
+                echo sudo rm -r /home/pi/CCD/Videos/Ready/CRM.mp4 >> UpdateC
+                echo 'sshpass -p "'$passwd'" 'scp $user@$IP:$locale /home/pi/CCD/Videos/Ready >> UpdateC 
+                echo StartC >> UpdateC
+                
+                #Write out Upcode
+                echo sudo rm -r /home/pi/CCD/Scripts/ToRun/update > Upcode
+                echo 'sshpass -p "' $passwd '" 'scp $user@$IP:$locale2 /home/pi/CCD/Scripts/ToRun >> Upcode 
+                echo cd /home/pi/CCD/Scripts/ToRun >> Upcode 
+                echo sudo chmod +x update >> Upcode 
+                echo sudo ./update >> Upcode
+        break
+        ;;
+        2)
+        #File Host
+                clear
+                
+                while [ $var2=false ]
+                do
+                echo "What are you using?\n1.)Dropbox.\n2.)Github.\nEnter in the number corresponding to your answer."
+                read choice
+                
+                case $choice in
+                        1) 
+                        #Dropbox
+                                clear
+                                echo "Please enter in the share path to your video file."
+                                read DBPath
+                                echo "Please enter in the share path to your update file."
+                                read UpPath
+                                
+                                #Write out Updatec
+                                echo StopC > UpdateC
+                                echo sudo rm -r /home/pi/CCD/Videos/Ready/CRM.mp4 >> UpdateC
+                                echo cd /home/pi/CCD/Videos/Ready >> UpdateC
+                                echo sudo wget -O CRM.mp4 $DBPath >> UpdateC 
+                                echo StartC >> UpdateC
+
+                                #Write out Upcode
+                                echo sudo rm -r /home/pi/CCD/Scripts/ToRun/update > Upcode
+                                echo sudo wget -O update $UpPath
+                                echo cp update /home/pi/CCD/Scripts/ToRun >> Upcode
+                                echo cd /home/pi/CCD/Scripts/ToRun >> Upcode
+                                echo sudo chmod +x update >> Upcode
+                                echo sudo ./update >> Upcode
+                        break
+                        ;;
+                        2) 
+                        #Github
+                                clear
+                                echo "Please enter in the path for your git repository."
+                                read GHPath
+                                echo "Please enter in the exact name of your repository."
+                                read RepPath
+                               
+                                #Write out Updatec
+                                echo StopC > UpdateC
+                                echo cd >> UpdateC
+                                echo git clone $GHPath >> UpdateC
+                                echo cd $RepPath >> UpdateC
+                                echo sudo rm -r /home/pi/CCD/Videos/Ready/CRM.mp4 >> UpdateC
+                                echo cp CRM.mp4 /home/pi/CCD/Videos/Ready >> UpdateC 
+                                echo StartC >> UpdateC
+                                
+                                #Write out Upcode
+                                echo sudo rm -r /home/pi/CCD/Scripts/ToRun/update > Upcode
+                                echo cp update /home/pi/CCD/Scripts/ToRun >> Upcode
+                                echo cd /home/pi/CCD/Scripts/ToRun >> Upcode 
+                                echo sudo chmod +x update >> Upcode 
+                                echo sudo ./update >> Upcode
+                        break
+                        ;;
+                        *)
+                        echo "Enter in a valid answer.";;
+                esac
+                done
+
+        break
+        ;;
+        *)
+                echo "Enter in a valid answer"
+        ;;
+esac
+done
+                
