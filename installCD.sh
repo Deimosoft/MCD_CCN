@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #Download and install pi_video_looper
 echo "Let's get started!"
 echo "~~~~~~~~~~~~~~~~~~"
