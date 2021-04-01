@@ -13,12 +13,12 @@ var1=false
 var2=false
 
 #Determine store
-echo 'What store is this for? \nPlease enter in the name, not the nsn.'
+echo -e 'What store is this for? \nPlease enter in the name, not the nsn.'
 read name
 clear
 
 #Determine source
-echo "Where are you storing you files?\n1.) CCS.\n2.)File hosting website like Dropbox or Github.\nEnter int he number corresponding to your answer."
+echo -e "Where are you storing you files?\n1.) CCS.\n2.)File hosting website like Dropbox or Github.\nEnter int he number corresponding to your answer."
 read type
 
 while [ $var1=false ]
@@ -31,45 +31,72 @@ case $type in
                 read user
                 echo "Enter in the public IP address of your server."
                 read IP
-                echo "Enter in the FULL file path to the video folder.\nDo not include the file name."
+                echo -e "Enter in the FULL file path to the video folder.\nDo not include the file name."
                 read locale
-                echo "Enter in the FULL file path to the update file folder.\nDo not include the file name."
-                read loacale2
+                echo -e "Enter in the FULL file path to the update file folder.\nDo not include the file name."
+                read locale2
                 echo "Enter in the password for the user."
                 read passwd
-                
+
                 #Write out Updatec
                 echo StopC > UpdateC
                 echo sudo rm -r /home/pi/CCD/Videos/Ready/CRM.mp4 >> UpdateC
                 echo 'sshpass -p "'$passwd'" 'scp $user@$IP:$locale /home/pi/CCD/Videos/Ready >> UpdateC 
                 echo StartC >> UpdateC
-                
+
                 #Write out Upcode
                 echo sudo rm -r /home/pi/CCD/Scripts/ToRun/update > Upcode
                 echo 'sshpass -p "' $passwd '" 'scp $user@$IP:$locale2 /home/pi/CCD/Scripts/ToRun >> Upcode 
                 echo cd /home/pi/CCD/Scripts/ToRun >> Upcode 
                 echo sudo chmod +x update >> Upcode 
                 echo sudo ./update >> Upcode
+
+                #Write out info into secure file.
+                touch CCI
+                echo "#This information is very sensitive. " > CCI
+                echo "#Do not share with those untrusted." >> CCI
+                echo "#Do NOT change the order of the entries or enter new entires." >> CCI
+                echo -e "#\n#\n#\n#\n#" >> CCI
+                echo "#Store name." >> CCI
+                echo $name >> CCI #10
+                echo -e "#\n#\n#" >> CCI
+                echo "#User." >> CCI
+                echo $user >> CCI #15
+                echo -e "#\n#\n#" >> CCI
+                echo "#IP address of server." >> CCI
+                echo $IP >> CCI #20
+                echo -e "#\n#\n#" >> CCI
+                echo "#File path to video file." >> CCI
+                echo $locale >> CCI #25
+                echo -e "#\n#\n#" >> CCI
+                echo "#File path to update file." >> CCI
+                echo $locale2 >> CCI #30
+                echo -e "#\n#\n#" >> CCI
+                echo "#Password" >> CCI
+                echo $passwd >> CCI #35
+                echo -e "#\n#\n#" >> CCI
+                echo "#Type." >>CCI
+                echo  "CCS" >> CCI #40
+
         break
         ;;
         2)
         #File Host
                 clear
-                
-                while [ $var2=false ]
+
+        while [ $var2=false ]
                 do
-                echo "What are you using?\n1.)Dropbox.\n2.)Github.\nEnter in the number corresponding to your answer."
+                echo -e "What are you using?\n1.)Dropbox.\n2.)Github.\nEnter in the number corresponding to your answer."
                 read choice
-                
                 case $choice in
-                        1) 
+                        1)
                         #Dropbox
                                 clear
                                 echo "Please enter in the share path to your video file."
                                 read DBPath
                                 echo "Please enter in the share path to your update file."
                                 read UpPath
-                                
+
                                 #Write out Updatec
                                 echo StopC > UpdateC
                                 echo sudo rm -r /home/pi/CCD/Videos/Ready/CRM.mp4 >> UpdateC
@@ -84,6 +111,23 @@ case $type in
                                 echo cd /home/pi/CCD/Scripts/ToRun >> Upcode
                                 echo sudo chmod +x update >> Upcode
                                 echo sudo ./update >> Upcode
+                                
+                                #Write out info into secure file.
+                                touch CCI
+                                echo "#This information is very sensitive. " > CCI
+                                echo "#Do not share with those untrusted." >> CCI
+                                echo "#Do NOT change the order of the entries or enter new entires." >> CCI
+                                echo "#Type." >>CCI
+                                echo  "Dropbox" >> CCI
+                                echo -e "#\n#\n#\n#\n#" >> CCI
+                                echo "#Store name." >> CCI
+                                echo $name >> CCI #10
+                                echo -e "#\n#\n#" >> CCI
+                                echo "#Path to video file." >> CCI
+                                echo $DBPath >> CCI #15
+                                echo -e "#\n#\n#" >> CCI
+                                echo "#Path to update file." >> CCI
+                                echo $UpPath >> CCI #20                
                         break
                         ;;
                         2) 
@@ -93,7 +137,7 @@ case $type in
                                 read GHPath
                                 echo "Please enter in the exact name of your repository."
                                 read RepPath
-                               
+
                                 #Write out Updatec
                                 echo StopC > UpdateC
                                 echo cd >> UpdateC
@@ -102,13 +146,31 @@ case $type in
                                 echo sudo rm -r /home/pi/CCD/Videos/Ready/CRM.mp4 >> UpdateC
                                 echo cp CRM.mp4 /home/pi/CCD/Videos/Ready >> UpdateC 
                                 echo StartC >> UpdateC
-                                
+
                                 #Write out Upcode
                                 echo sudo rm -r /home/pi/CCD/Scripts/ToRun/update > Upcode
                                 echo cp update /home/pi/CCD/Scripts/ToRun >> Upcode
                                 echo cd /home/pi/CCD/Scripts/ToRun >> Upcode 
                                 echo sudo chmod +x update >> Upcode 
                                 echo sudo ./update >> Upcode
+                                
+                                
+                                #Write out info into secure file.
+                                touch CCI
+                                echo "#This information is very sensitive. " > CCI
+                                echo "#Do not share with those untrusted." >> CCI
+                                echo "#Do NOT change the order of the entries or enter new entires." >> CCI
+                                echo "#Type." >>CCI
+                                echo  "Github" >> CCI
+                                echo -e "#\n#\n#\n#\n#" >> CCI
+                                echo "#Store name." >> CCI
+                                echo $name >> CCI #10
+                                echo -e "#\n#\n#" >> CCI
+                                echo "#Repository link." >> CCI
+                                echo $GHPath >> CCI #15
+                                echo -e "#\n#\n#" >> CCI
+                                echo "#Repository name." >> CCI
+                                echo $RepPath >> CCI #20 
                         break
                         ;;
                         *)
@@ -123,4 +185,3 @@ case $type in
         ;;
 esac
 done
-                
