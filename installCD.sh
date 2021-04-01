@@ -76,6 +76,10 @@ sudo rm -r /etc/motd
 sudo cp motd /etc
 sleep 2
 
+#Check SCP Connection
+sudo chmod +x TestSCP
+sudo ./TestSCP
+
 #Display the motd
 clear
 cat motd
