@@ -76,7 +76,7 @@ case $type in
                 echo -e "#\n#\n#" >> CCI
                 echo "#Password" >> CCI
                 echo $passwd >> CCI #35
-                sudo cp CCI /home/otp/CCS
+                sudo cp CCI /home/pi/CCD
         break
         ;;
         2)
@@ -128,7 +128,7 @@ case $type in
                                 echo -e "#\n#\n#" >> CCI
                                 echo "#Path to update file." >> CCI
                                 echo $UpPath >> CCI #20
-                                sudo cp CCI /home/otp/CCS
+                                sudo cp CCI /home/pi/CCD
                       break
                         ;;
                         2)
@@ -171,7 +171,7 @@ case $type in
                                 echo -e "#\n#\n#" >> CCI
                                 echo "#Repository name." >> CCI
                                 echo $RepPath >> CCI #20
-                                sudo cp CCI /home/otp/CCS
+                                sudo cp CCI /home/pi/CCD
 
                         break
                         ;;
