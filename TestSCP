@@ -1,8 +1,26 @@
-echo "Testing Secure Copy.\nLog in this one time and reply with yes to lock your IP as a registered and approved client for the CCS"
+#!/bin/bash
+#
+#
+echo -e "Testing Secure Copy.\nLog in this one time and reply with yes to lock your IP as a registered and approved client for the CCS"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-sleep 4
-scp otp@209.143.62.37:~/CCS/test /home/pi/CCD/Scripts/ToRun
-clear
-cat /home/pi/CCD/Scripts/ToRun/test
-read test
-rm /home/pi/CCD/Scripts/ToRun/test
+sleep 2
+
+#Declare variables
+#
+type=$(sed 5!d /home/pi/CCD/CCI)
+user=$(sed 15!d /home/pi/CCD/CCI)
+ip=$(sed 20!d /home/pi/CCD/CCI)
+
+case $type in
+
+        CCS*)
+                scp $user@$ip:~/CCS/TestFile /home/pi/CCD
+                clear
+                cat /home/pi/CCD
+                read X
+                rm /home/pi/CCD
+        ;;
+        *)
+                sleep 1
+        ;;
+esac
