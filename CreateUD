@@ -105,7 +105,7 @@ case $type in
 
                                 #Write out Upcode
                                 echo sudo rm -r /home/pi/CCD/Scripts/ToRun/update > Upcode
-                                echo sudo wget -O update $UpPath
+                                echo sudo wget -O update $UpPath >> Upcode
                                 echo cp update /home/pi/CCD/Scripts/ToRun >> Upcode
                                 echo cd /home/pi/CCD/Scripts/ToRun >> Upcode
                                 echo sudo chmod +x update >> Upcode
