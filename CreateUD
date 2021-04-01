@@ -41,7 +41,7 @@ case $type in
                 #Write out Updatec
                 echo StopC > UpdateC
                 echo sudo rm -r /home/pi/CCD/Videos/Ready/CRM.mp4 >> UpdateC
-                echo 'sshpass -p "'$passwd'" 'scp $user@$IP:$locale /home/pi/CCD/Videos/Ready >> UpdateC 
+                echo 'sshpass -p "'$passwd'" 'scp $user@$IP:$locale/CRM.mp4 /home/pi/CCD/Videos/Ready >> UpdateC 
                 echo StartC >> UpdateC
 
                 #Write out Upcode
@@ -56,7 +56,9 @@ case $type in
                 echo "#This information is very sensitive. " > CCI
                 echo "#Do not share with those untrusted." >> CCI
                 echo "#Do NOT change the order of the entries or enter new entires." >> CCI
-                echo -e "#\n#\n#\n#\n#" >> CCI
+                echo "#Type." >> CCI
+                echo  "CCS" >> CCI #5
+                echo -e "#\n#\n#" >> CCI
                 echo "#Store name." >> CCI
                 echo $name >> CCI #10
                 echo -e "#\n#\n#" >> CCI
@@ -74,10 +76,7 @@ case $type in
                 echo -e "#\n#\n#" >> CCI
                 echo "#Password" >> CCI
                 echo $passwd >> CCI #35
-                echo -e "#\n#\n#" >> CCI
-                echo "#Type." >>CCI
-                echo  "CCS" >> CCI #40
-
+                sudo cp CCI /home/otp/CCS
         break
         ;;
         2)
@@ -111,15 +110,16 @@ case $type in
                                 echo cd /home/pi/CCD/Scripts/ToRun >> Upcode
                                 echo sudo chmod +x update >> Upcode
                                 echo sudo ./update >> Upcode
-                                
+
+
                                 #Write out info into secure file.
                                 touch CCI
                                 echo "#This information is very sensitive. " > CCI
                                 echo "#Do not share with those untrusted." >> CCI
                                 echo "#Do NOT change the order of the entries or enter new entires." >> CCI
-                                echo "#Type." >>CCI
-                                echo  "Dropbox" >> CCI
-                                echo -e "#\n#\n#\n#\n#" >> CCI
+                                echo "#Type." >>CCI 
+                                echo  "Dropbox" >> CCI #5
+                                echo -e "#\n#\n#" >> CCI
                                 echo "#Store name." >> CCI
                                 echo $name >> CCI #10
                                 echo -e "#\n#\n#" >> CCI
@@ -127,10 +127,11 @@ case $type in
                                 echo $DBPath >> CCI #15
                                 echo -e "#\n#\n#" >> CCI
                                 echo "#Path to update file." >> CCI
-                                echo $UpPath >> CCI #20                
-                        break
+                                echo $UpPath >> CCI #20
+                                sudo cp CCI /home/otp/CCS
+                      break
                         ;;
-                        2) 
+                        2)
                         #Github
                                 clear
                                 echo "Please enter in the path for your git repository."
@@ -144,25 +145,24 @@ case $type in
                                 echo git clone $GHPath >> UpdateC
                                 echo cd $RepPath >> UpdateC
                                 echo sudo rm -r /home/pi/CCD/Videos/Ready/CRM.mp4 >> UpdateC
-                                echo cp CRM.mp4 /home/pi/CCD/Videos/Ready >> UpdateC 
+                                echo cp CRM.mp4 /home/pi/CCD/Videos/Ready >> UpdateC
                                 echo StartC >> UpdateC
 
                                 #Write out Upcode
                                 echo sudo rm -r /home/pi/CCD/Scripts/ToRun/update > Upcode
                                 echo cp update /home/pi/CCD/Scripts/ToRun >> Upcode
-                                echo cd /home/pi/CCD/Scripts/ToRun >> Upcode 
-                                echo sudo chmod +x update >> Upcode 
+                                echo cd /home/pi/CCD/Scripts/ToRun >> Upcode
+                                echo sudo chmod +x update >> Upcode
                                 echo sudo ./update >> Upcode
-                                
-                                
+
                                 #Write out info into secure file.
                                 touch CCI
                                 echo "#This information is very sensitive. " > CCI
                                 echo "#Do not share with those untrusted." >> CCI
                                 echo "#Do NOT change the order of the entries or enter new entires." >> CCI
                                 echo "#Type." >>CCI
-                                echo  "Github" >> CCI
-                                echo -e "#\n#\n#\n#\n#" >> CCI
+                                echo  "Github" >> CCI #5
+                                echo -e "#\n#\n#" >> CCI
                                 echo "#Store name." >> CCI
                                 echo $name >> CCI #10
                                 echo -e "#\n#\n#" >> CCI
@@ -170,7 +170,9 @@ case $type in
                                 echo $GHPath >> CCI #15
                                 echo -e "#\n#\n#" >> CCI
                                 echo "#Repository name." >> CCI
-                                echo $RepPath >> CCI #20 
+                                echo $RepPath >> CCI #20
+                                sudo cp CCI /home/otp/CCS
+
                         break
                         ;;
                         *)
