@@ -18,6 +18,7 @@ sudo chmod 777 /home/pi/CCD
 sudo chmod 777 /home/pi/CCD/Videos
 sudo chmod 777 /home/pi/CCD/Scripts
 sudo chmod 777 /home/pi/CCD/Videos/Ready
+sudo chmod 777 /home/pi/CCD/Videos/Temp
 sudo chmod 777 /home/pi/CCD/Scripts/Commands
 sudo chmod 777 /home/pi/CCD/Scripts/ToRun
 sleep 5
