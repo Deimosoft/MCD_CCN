@@ -1,10 +1,6 @@
 #!/bin/bash
 #
 #
-echo -e "Testing Secure Copy.\nLog in this one time and reply with yes to lock your IP as a registered and approved client for the CCS"
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-sleep 2
-
 #Declare variables
 #
 type=$(sed 5!d /home/pi/CCD/CCI)
@@ -14,6 +10,9 @@ ip=$(sed 20!d /home/pi/CCD/CCI)
 case $type in
 
         CCS*)
+                echo -e "Testing Secure Copy.\nLog in this one time and reply with yes to lock your IP as a registered and approved client for the CCS"
+                echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+                sleep 3
                 scp $user@$ip:~/CCS/TestFile /home/pi/CCD
                 clear
                 cat /home/pi/CCD
