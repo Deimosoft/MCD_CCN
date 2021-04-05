@@ -4,6 +4,7 @@
 #Declare variables
 #
 type=$(sed 5!d /home/pi/CCD/CCI)
+name=$(sed 10!d /home/pi/CCD/CCI)
 user=$(sed 15!d /home/pi/CCD/CCI)
 ip=$(sed 20!d /home/pi/CCD/CCI)
 
@@ -14,6 +15,7 @@ case $type in
                 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                 sleep 3
                 scp $user@$ip:~/CCS/TestFile /home/pi/CCD
+                scp $user@$ip:~/CCS/Stores/$name/CRM.mp4 /home/pi/CCD/Videos/Ready
                 clear
                 cat /home/pi/CCD/TestFile
                 read X
