@@ -15,9 +15,9 @@ case $type in
                 sleep 3
                 scp $user@$ip:~/CCS/TestFile /home/pi/CCD
                 clear
-                cat /home/pi/CCD
+                cat /home/pi/CCD/TestFile
                 read X
-                rm /home/pi/CCD
+                rm /home/pi/CCD/TestFile
         ;;
         *)
                 sleep 1
