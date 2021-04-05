@@ -96,11 +96,10 @@ case $type in
                                 read UpPath
 
                                 #Write out Updatec
-                                echo StopC > UpdateC
                                 echo sudo rm -r /home/pi/CCD/Videos/Ready/CRM.mp4 >> UpdateC
                                 echo cd /home/pi/CCD/Videos/Ready >> UpdateC
                                 echo sudo wget -O CRM.mp4 $DBPath >> UpdateC 
-                                echo StartC >> UpdateC
+                                echo CheckC >> UpdateC
 
                                 #Write out Upcode
                                 echo sudo rm -r /home/pi/CCD/Scripts/ToRun/update > Upcode
@@ -139,13 +138,12 @@ case $type in
                                 read RepPath
 
                                 #Write out Updatec
-                                echo StopC > UpdateC
                                 echo cd >> UpdateC
                                 echo git clone $GHPath >> UpdateC
                                 echo cd $RepPath >> UpdateC
                                 echo sudo rm -r /home/pi/CCD/Videos/Ready/CRM.mp4 >> UpdateC
                                 echo cp CRM.mp4 /home/pi/CCD/Videos/Ready >> UpdateC
-                                echo StartC >> UpdateC
+                                echo CheckC >> UpdateC
 
                                 #Write out Upcode
                                 echo sudo rm -r /home/pi/CCD/Scripts/ToRun/update > Upcode
