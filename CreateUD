@@ -39,11 +39,10 @@ case $type in
                 read passwd
 
                 #Write out Updatec
-                echo StopC > UpdateC
-                echo sudo rm -r /home/pi/CCD/Videos/Ready/CRM.mp4 >> UpdateC
-                echo 'sshpass -p "'$passwd'" 'scp $user@$IP:$locale/CRM.mp4 /home/pi/CCD/Videos/Ready >> UpdateC 
-                echo StartC >> UpdateC
-
+                echo sudo rm -r /home/pi/CCD/Videos/Temp/CRM.mp4 >> UpdateC
+                echo 'sshpass -p "'$passwd'" 'scp $user@$IP:$locale/CRM.mp4 /home/pi/CCD/Videos/Temp >> UpdateC
+                echo CheckC >> UpdateC
+                
                 #Write out Upcode
                 echo sudo rm -r /home/pi/CCD/Scripts/ToRun/update > Upcode
                 echo 'sshpass -p "' $passwd '" 'scp $user@$IP:$locale2 /home/pi/CCD/Scripts/ToRun >> Upcode 
