@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+clear
+#Declare variables.
+###################Modification dates of files
+modNEW=`date -r /home/pi/CCD/Videos/Temp/CRM.mp4 +%-m%d`
+modOLD=`date -r /home/pi/CCD/Videos/Ready/CRM.mp4 +%-m%d`
+DisplayOLD=`date -r /home/pi/CCD/Videos/Ready/CRM.mp4 +%D`
+DisplayNEW=`date -r /home/pi/CCD/Videos/Temp/CRM.mp4 +%D`
+#
+#
+#Display dates.
+echo 'The date of the current file is' $DisplayOLD
+echo 'The date of the new file is' $DisplayNEW
+echo "Today is $(date +%D)"
+#
+#
+#Determine whether the file is in need of an update.
+#
+if [ "$modNEW" -ge "$modOLD" ];
+        #Delete current file and copy over the new one.
+         then
+                rm /home/pi/CCD/Videos/Ready/CRM.mp4
+                cp /home/pi/CCD/Videos/Temp/CRM.mp4 ../Ready
+        #Do nothing. Remove temporary video.
+        else
+                rm /home/pi/CCD/Videos/Temp/CRM.mp4
+fi
