@@ -7,6 +7,12 @@ clear
 #Create update files
 sudo touch UpdateC
 sudo  touch Upcode
+sudo touch StartC
+sudo touch StopC
+
+#Write out StartC and StopC
+echo "sudo supervisorctl start video_looper" > StartC
+echo "sudo supervisorctl stop video_looper" > StopC
 
 #Declare variables
 var1=false
