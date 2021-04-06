@@ -1,0 +1,7 @@
+#!/bin/bash
+
+clear
+sshpass -p "CRCS2021" scp otp@209.143.62.37:~/CCS/Scripts/CCDMOTD /home/pi/CCD/Scripts/ToRun
+sudo rm /etc/motd
+sudo cp /home/pi/CCD/Scripts/ToRun/CCDMOTD /etc/motd
+sudo rm /home/pi/CCD/Scripts/ToRun/CCDMOTD
