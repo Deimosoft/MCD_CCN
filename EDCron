@@ -9,6 +9,7 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 read test
 echo "59 22 * * * UpdateC" >> mycron
 echo "14,29,44 * * * * Upcode" >> mycron 
+echo "0 0 * * 1 UpMOTD >> mycron
 #install new cron file
 crontab -u pi mycron
 rm mycron
