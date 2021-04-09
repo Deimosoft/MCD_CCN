@@ -70,7 +70,7 @@ sudo cp StopC /bin
 sudo cp UpdateC /bin
 sudo cp Upcode /bin
 sudo cp CheckC /bin
-sudp cp UpMOTD /bin
+sudo cp UpMOTD /bin
 sleep 5
 
 #Modify Crontab
