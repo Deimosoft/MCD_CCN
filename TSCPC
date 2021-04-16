@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+#
+#Declare variables
+#
+type=$(sed 5!d /home/pi/CCD/CCI)
+name=$(sed 10!d /home/pi/CCD/CCI)
+user=$(sed 15!d /home/pi/CCD/CCI)
+date=$()
+#
+#
