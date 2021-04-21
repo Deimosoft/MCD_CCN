@@ -3,15 +3,16 @@
 clear
 echo "Modifying the crontab"
 echo "~~~~~~~~~~~~~~~~~~~~~"
-crontab -u pi -l > mycron
 #echo new cron into cron file
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo $'Video will update every hour on the hour.\nUpdated scripts will be checked every fifteen minutes.\nYou can change these settings at any time.\n\n\nPress any key to continue.'
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 read test
-echo "59 22 * * * UpdateC" >> mycron
+echo "59 22 * * * UpdateC" > mycron
 echo "14,29,44 * * * * Upcode" >> mycron 
-echo "0 0 * * 1 UpMOTD >> mycron
+echo "0 0 * * 1 UpMOTD" >> mycron
+sudo echo "0,5,10,15,20,25,30,35,40,45,50,55 * * * * TSCPC" >> mycron
+sudo echo "0 13 * * * FWU" >> mycron
 #install new cron file
 crontab -u pi mycron
 rm mycron
