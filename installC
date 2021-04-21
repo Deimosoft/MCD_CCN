@@ -49,6 +49,8 @@ sudo chmod +x UpdateC
 sudo chmod +x Upcode
 sudo chmod +x CheckC
 sudo chmod +x UpMOTD
+sudo chmod +x FWU
+sudo chmod +x TSCPC
 sleep 5
 
 #Move scripts into the sripts drive
@@ -60,6 +62,8 @@ cp UpdateC /home/pi/CCD/Scripts/Commands
 cp Upcode /home/pi/CCD/Scripts/Commands
 cp CheckC /home/pi/CCD/Scripts/Commands
 cp UpMOTD /home/pi/CCD/Scripts/Commands
+cp FWU /home/pi/CCD/Scripts/Commands
+cp TSCPC /home/pi/CCD/Scripts/Commands
 sleep 5
 
 #Move scripts into /bin
@@ -71,6 +75,8 @@ sudo cp UpdateC /bin
 sudo cp Upcode /bin
 sudo cp CheckC /bin
 sudo cp UpMOTD /bin
+sudo cp FWU /bin
+sudo cp TSCPC /bin
 sleep 5
 
 #Modify Crontab
