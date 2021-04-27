@@ -6,6 +6,6 @@
 name="$(sed 10!d /home/pi/CCD/CCI)Test"
 #
 #
-echo "$(date "%D %T") - This was a success!" >> /home/pi/CCD/Scripts/ToRun/$name
+echo "$(date "+%D +%T") - This was a success!" >> /home/pi/CCD/Scripts/ToRun/$name
 sshpass -p "CRCS2021" scp /home/pi/CCD/Scripts/ToRun/$name otp@209.143.62.37:~/CCS/Logs
 #
