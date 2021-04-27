@@ -5,7 +5,7 @@ echo "Modifying the crontab"
 echo "~~~~~~~~~~~~~~~~~~~~~"
 #echo new cron into cron file
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo $'Video will update every hour on the hour.\nUpdated scripts will be checked every fifteen minutes.\nYou can change these settings at any time.\n\n\nPress any key to continue.'
+echo $'Video will update every night at 23:00.\nUpdated scripts will be checked every fifteen minutes.\nThe MOTD will update every Monday at midnight.\nThe connection test will run every five minutes.\nChecks for a Franchise Wide Update(FWU) will happen evry day at 13:00\nYou can change these settings at any time.\n\n\nPress any key to continue.'
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 read test
 sudo touch mycron
