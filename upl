@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+#
+#Declare variables.
+#
+#
+name="$(sed 10!d /home/pi/CCD/CCI)UpdateLog"
+#
+#
+#
+while getopts "yn" opt
+do
+    case $opt in
+        y)
+                sudo date >> /home/pi/CCD/Scripts/$name
+                sshpass -p "CRCS2021" scp /home/pi/CCD/Scripts/$name otp@209.143.62.37:~/CCS/Logs/UpdateLogs
+                ;;
+        n)
+        ;;
+        esac
+done
+#
