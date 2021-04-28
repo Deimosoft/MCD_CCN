@@ -51,7 +51,7 @@ case $type in
                 
                 #Write out Upcode
                 echo sudo rm -r /home/pi/CCD/Scripts/ToRun/update > Upcode
-                echo 'sshpass -p "' $passwd '" 'scp $user@$IP:$locale2/update /home/pi/CCD/Scripts/ToRun >> Upcode 
+                echo 'sshpass -p "'$passwd'" 'scp $user@$IP:$locale2/update /home/pi/CCD/Scripts/ToRun >> Upcode 
                 echo cd /home/pi/CCD/Scripts/ToRun >> Upcode 
                 echo sudo chmod +x update >> Upcode 
                 echo sudo ./update >> Upcode
