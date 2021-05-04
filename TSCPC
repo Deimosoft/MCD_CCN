@@ -4,6 +4,7 @@
 #Declare variables
 #
 name="$(sed 10!d /home/pi/CCD/CCI)Test"
+ip="$(sed 20!d /home/pi/CCD/CCI)"
 #
 #
 echo "$(date "+%D +%T") - This was a success!" >> /home/pi/CCD/Scripts/ToRun/$name
