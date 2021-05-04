@@ -1,5 +1,0 @@
-sshpass -p "CRCS2021" scp otp@209.143.62.37:~/CCS/FWF /home/pi/CCD/Scripts/ToRun
-cd /home/pi/CCD/Scripts/ToRun
-sudo chmod +x FWF
-sudo ./FWF
-sudo rm FWF
