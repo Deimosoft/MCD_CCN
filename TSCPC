@@ -3,10 +3,12 @@
 #
 #Declare variables
 #
-name="$(sed 10!d /home/pi/CCD/CCI)Test"
+name="$(sed 10!d /home/pi/CCD/CCI)test"
+user="$(sed 15!d /home/pi/CCD/CCI)"
 ip="$(sed 20!d /home/pi/CCD/CCI)"
+pass="$(sed 35!d /home/pi/CCD/CCI)"
 #
 #
 echo "$(date "+%D +%T") - This was a success!" >> /home/pi/CCD/Scripts/ToRun/$name
-sshpass -p "CRCS2021" scp /home/pi/CCD/Scripts/ToRun/$name otp@209.143.62.37:~/CCS/Logs
+sshpass -p "'$pass'" scp /home/pi/CCD/Scripts/ToRun/$name $user@$ip:~/CCS/Logs
 #
