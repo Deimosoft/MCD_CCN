@@ -5,6 +5,9 @@
 #
 #
 name="$(sed 10!d /home/pi/CCD/CCI)UpdateLog"
+user="$(sed 15!d /home/pi/CCD/CCI)"
+ip="$(sed 20!d /home/pi/CCD/CCI)"
+pass="$(sed 35!d /home/pi/CCD/CCI)"
 #
 #
 #
@@ -13,7 +16,7 @@ do
     case $opt in
         y)
                 sudo date >> /home/pi/CCD/Scripts/$name
-                sshpass -p "CRCS2021" scp /home/pi/CCD/Scripts/$name otp@209.143.62.37:~/CCS/Logs/UpdateLogs
+                sshpass -p "'$pass'" scp /home/pi/CCD/Scripts/$name $user@$ip:~/CCS/Logs/UpdateLogs
                 ;;
         n)
         ;;
