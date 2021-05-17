@@ -45,11 +45,9 @@ echo "Making scripts executeable."
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 sudo chmod +x StartC
 sudo chmod +x StopC
-sudo chmod +x UpdateC
 sudo chmod +x Upcode
 sudo chmod +x CheckC
 sudo chmod +x UpMOTD
-sudo chmod +x FWU
 sudo chmod +x TSCPC
 sudo chmod +x upl
 sleep 5
@@ -59,11 +57,9 @@ echo "Move pre-made scripts over"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~"
 cp StartC /home/pi/CCD/Scripts/Commands
 cp StopC /home/pi/CCD/Scripts/Commands
-cp UpdateC /home/pi/CCD/Scripts/Commands
 cp Upcode /home/pi/CCD/Scripts/Commands
 cp CheckC /home/pi/CCD/Scripts/Commands
 cp UpMOTD /home/pi/CCD/Scripts/Commands
-cp FWU /home/pi/CCD/Scripts/Commands
 cp TSCPC /home/pi/CCD/Scripts/Commands
 cp upl /home/pi/CCD/Scripts/Commands
 sleep 5
@@ -73,11 +69,9 @@ echo "Moving the scripts into the /bin folder."
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 sudo cp StartC /bin
 sudo cp StopC /bin
-sudo cp UpdateC /bin
 sudo cp Upcode /bin
 sudo cp CheckC /bin
 sudo cp UpMOTD /bin
-sudo cp FWU /bin
 sudo cp TSCPC /bin
 sudo cp upl /bin
 sleep 5
