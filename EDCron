@@ -9,11 +9,8 @@ echo $'Video will update every night at 23:00.\nUpdated scripts will be checked 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 read test
 sudo touch mycron
-sudo echo "59 22 * * * UpdateC" > mycron
-sudo echo "14,29,44 * * * * Upcode" >> mycron 
-sudo echo "0 0 * * 1 UpMOTD" >> mycron
+sudo echo "0 0 * * 1 UpMOTD" > mycron
 sudo echo "0,5,10,15,20,25,30,35,40,45,50,55 * * * * TSCPC" >> mycron
-sudo echo "0 13 * * * FWU" >> mycron
 #install new cron file
 sudo crontab -u pi mycron
 sudo rm mycron
