@@ -88,8 +88,7 @@ sudo ./EDCron
 sleep 2
 
 #Edit MOTD
-sudo rm -r /etc/motd
-sudo cp motd /etc
+UpMOTD
 sleep 2
 
 #Check SCP Connection
