@@ -14,7 +14,7 @@ case $type in
                 echo -e "Testing Secure Copy.\nLog in this one time and reply with yes to lock your IP as a registered and approved client for the CCS"
                 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                 sleep 3
-                scp $user@$ip:~/CCS/TestFile /home/pi/CCD
+                scp $user@$ip:~/CCS/Scripts/TestFile /home/pi/CCD
                 scp $user@$ip:~/CCS/Stores/$name/CRM.mp4 /home/pi/CCD/Videos/Ready
                 clear
                 cat /home/pi/CCD/TestFile
