@@ -1,9 +1,0 @@
-#!/bin/bash
-user="$(sed 15!d /home/pi/CCD/CCI)"
-ip="$(sed 20!d /home/pi/CCD/CCI)"
-pass="$(sed 35!d /home/pi/CCD/CCI)"
-clear
-sshpass -p "'$pass'" scp $user@$ip:~/CCS/Scripts/CCDMOTD /home/pi/CCD/Scripts/ToRun
-sudo rm /etc/motd
-sudo cp /home/pi/CCD/Scripts/ToRun/CCDMOTD /etc/motd
-sudo rm /home/pi/CCD/Scripts/ToRun/CCDMOTD
