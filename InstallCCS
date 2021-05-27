@@ -1,1 +1,51 @@
 #!/bin/bash
+#Declare variables
+name=""
+ip=""
+user=""
+pass=""
+#Let's go
+#Gather information to create the CCSI file and build the file system.
+clear
+echo $'Hello! \nShall we get started?\n\n'
+echo $'First off, what is the name of the franchise you are building these for?'
+read name
+clear
+echo $'What is the username you chose when you installed Ubuntu?'
+read user
+clear
+echo $'What is the PUBLIC ip address you set up?'
+read ip
+clear
+echo $'What is the password for '$user'?'
+read pass
+#Create CCSI
+touch CCSI
+echo "#This information is very sensitive. " > CCSI
+echo "#Do not share with those untrusted." >> CCSI
+echo "#Do NOT change the order of the entries or enter new entires." >> CCSI
+echo "#Name." >> CCSI
+echo  $name >> CCSI #5
+echo -e "#\n#\n#" >> CCSI
+echo "#User." >> CCSI
+echo $user >> CCSI #10
+echo -e "#\n#\n#" >> CCSI
+echo "#IP." >> CCSI
+echo $ip >> CCI #15
+echo -e "#\n#\n#" >> CCSI
+echo "#Password." >> CCSI
+echo $pass >> CCSI #20
+#Make file system
+sudo cp -r CCS /home/$user
+sudo cp CCSI /home/$user/CCS
+#Change permissions
+sudo chmod 777 /home/$user/CCS/*
+sudo chmod 777 /home/$user/CCS/Stores
+sudo chmod 777 /home/$user/CCS/Scripts
+sudo chmod 777 /home/$user/CCS/Scripts/StoreScripts
+sudo chmod 777 /home/$user/CCS/Scripts/ServerScripts
+sudo chmod 777 /home/$user/CCS/Scripts/CompletionScripts
+sudo chmod 777 /home/$user/CCS/Logs
+sudo chmod 777 /home/$user/CCS/Logs/StoreLogs
+sudo chmod 777 /home/$user/CCS/Logs/UpdateLogs
+sudo chmod 777 /home/$user/CCS/FPU
